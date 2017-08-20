@@ -1,33 +1,25 @@
 import React, {Component, PropTypes} from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import TodoForm from './components/TodoForm'
+import TodoList from './components/TodoList'
 
 class App extends Component {
     render() {
-        let todosElements = this.props.todos.map(item => {
-            return (
-                <li key={item.id}>
-                    <input type="checkbox" checked={item.isComplete ? "checked" : "" } />
-                    {item.name}
-                </li>
-            )
-        });
-
         return (
             <div className="App">
-                <div className="TodoList">
-                    <form><input type="text"/></form>
-                    <ul>
-                        {todosElements}
-                    </ul>
-                </div>
+
+                <TodoForm/>
+                <TodoList todos={this.props.todos}/>
+
             </div>
+
         );
     }
 }
 
 App.PropTypes = {
     todos: PropTypes.array.isRequired
-}
+};
 
 export default App;
