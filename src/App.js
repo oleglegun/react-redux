@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import TodoForm from './components/TodoForm'
@@ -17,9 +17,5 @@ class App extends Component {
         );
     }
 }
-
-App.PropTypes = {
-    todos: PropTypes.array.isRequired
-};
 
 export default App;

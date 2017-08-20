@@ -1,5 +1,8 @@
 const initialState = {
-    todos: [ ]
+    todos: [
+        {id: 1, name: "First TODO item", isComplete: true},
+        {id: 2, name: "Second TODO item", isComplete: false},
+    ]
 }
 export default (state = initialState, action) => {
     switch (action.type) {
