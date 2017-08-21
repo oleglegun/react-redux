@@ -1,7 +1,19 @@
 {
   "todos": [
-    {"id": 1, "name": "First TODO item", "isComplete": true},
-    {"id": 2, "name": "Second TODO item", "isComplete": false},
-    {"id": 3, "name": "Third TODO item", "isComplete": false}
+    {
+      "id": 1,
+      "name": "First TODO item",
+      "isComplete": true
+    },
+    {
+      "id": 2,
+      "name": "Second TODO item",
+      "isComplete": false
+    },
+    {
+      "id": 3,
+      "name": "Third TODO item",
+      "isComplete": false
+    }
   ]
 }
