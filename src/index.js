@@ -1,29 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import {Provider} from 'react-redux'
+import './index.css'
+import App from './App'
+import registerServiceWorker from './registerServiceWorker'
 import store from './store'
-import {updateCurrent} from './reducers/todo'
 
 
-const todoChangeHandler = (val) => store.dispatch(updateCurrent(val))
+// const todoChangeHandler = (val) => store.dispatch(updateCurrent(val))
 
-const render = () => {
-    let state = store.getState()
-    ReactDOM.render(
-        <App
-            todos={state.todos}
-            currentTodo={state.currentTodo}
-            changeCurrent={todoChangeHandler}
-        />,
-        document.getElementById('root'));
-}
+// const actions = bindActionCreators({
+//     todoChangeHandler: updateCurrent
+// }, store.dispatch)
 
-render()
+// Shorthand
+// const actions = bindActionCreators({
+//     updateCurrent
+// }, store.dispatch)
+
+
+ReactDOM.render(
+    <Provider store={store}>
+        <App/>
+    </Provider>,
+    document.getElementById('root'))
+
+
+// render()
 
 // Subscribe to the changes of the store
-store.subscribe(render)
+// store.subscribe(render)
 
 // Test
 // setTimeout(() => store.dispatch(
@@ -33,4 +39,4 @@ store.subscribe(render)
 //     }
 // ), 3000)
 
-registerServiceWorker();
+registerServiceWorker()
