@@ -7,8 +7,8 @@ const initialState = {
 }
 
 // Constants
-const TODO_ADD = 'TODO_ADD'
-const TODOS_LOAD = 'TODOS_LOAD'
+export const TODO_ADD = 'TODO_ADD'
+export const TODOS_LOAD = 'TODOS_LOAD'
 const CURRENT_UPDATE = 'CURRENT_UPDATE'
 
 // Action creators
@@ -19,6 +19,7 @@ export const addTodo = (todo) => ({type: TODO_ADD, payload: todo})
 // Actions creators for thunk (returns a function)
 export const fetchTodos = () => {
     return (dispatch) => {
+        dispatch(showMessage('Loading Todos'))
         getTodos()
             .then(todos => dispatch(loadTodos(todos)))
     }
