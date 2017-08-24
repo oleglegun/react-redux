@@ -27,8 +27,8 @@ export const updateTodo = (todo) => {
         .then(res => res.json())
 }
 
-export const destroyTodo = (todo) => {
-    return fetch(`http://localhost:8080/todos/${todo.id}`, {
+export const destroyTodo = (id) => {
+    return fetch(`http://localhost:8080/todos/${id}`, {
         method: 'DELETE',
         headers: {
             'Accept': 'application/json',

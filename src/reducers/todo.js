@@ -18,9 +18,9 @@ export const updateCurrent = (val) => ({type: CURRENT_UPDATE, payload: val})
 export const loadTodos = (todos) => ({type: TODOS_LOAD, payload: todos})
 export const addTodo = (todo) => ({type: TODO_ADD, payload: todo})
 export const replaceTodo = (todo) => ({type: TODO_REPLACE, payload: todo})
-export const removeTodo = (id) => ({type: TODO_REPLACE, payload: id})
+export const removeTodo = (id) => ({type: TODO_REMOVE, payload: id})
 
-// Actions creators for thunk (returns a function)
+// Actions creators for thunk (return a function)
 export const fetchTodos = () => {
     return (dispatch) => {
         dispatch(showMessage('Loading Todos'))
@@ -57,6 +57,7 @@ export const deleteTodo = (id) => {
     }
 }
 
+// Reducer
 export default (state = initialState, action) => {
     switch (action.type) {
         case TODO_ADD:
