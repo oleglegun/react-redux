@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {BrowserRouter as Router} from 'react-router-dom'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import './App.css'
 import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList'
@@ -16,7 +16,10 @@ class App extends Component {
                     <div className="container">
                         <Message/>
                         <TodoForm/>
-                        <TodoList/>
+                        <Route path='/:filter?' render={({match}) => (
+                            <TodoList filter={match.params.filter}/>
+                        )}/>
+
                         <Footer/>
                     </div>
                 </Router>
